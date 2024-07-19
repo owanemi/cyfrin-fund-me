@@ -4,6 +4,7 @@ pragma solidity ^0.8.24;
 import {PriceConverter} from './PriceConverter.sol';
 import { MathLibrary } from './MathLibrary.sol';
 
+error notOwner() ;
 contract FundMe {
     using PriceConverter for uint256;
     using MathLibrary for uint256;
@@ -58,8 +59,16 @@ contract FundMe {
     // 3) call
 
     modifier onlyOwner() {
-        require(msg.sender == i_owner, "Only owner of the contract can withdraw");
+        // require(msg.sender == i_owner, "Only owner of the contract can withdraw");
+        if(msg.sender != i_owner) { revert notOwner(); }
         _; 
     }
+    // what happens if somsone sends the contract ETH without calling the fund() function
 
+    receive() external payable {
+        fund();
+    }
+    fallback() external payable {
+        fund();
+    }
 }
