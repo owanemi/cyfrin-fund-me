@@ -27,7 +27,7 @@ contract FundMe {
 
     function fund() public payable {
         // myValue = myValue + 1;
-        require( msg.value.getConversionRate() >= minimumUSD, "ETH sent too small");
+        require( msg.value.getConversionRate() >= MINIMUM_USD, "ETH sent too small");
         funders.push(msg.sender);
         addressToAmountFunded[msg.sender] += msg.value;
         addressToContributionCount[msg.sender] = addressToContributionCount[msg.sender] + 1;        
