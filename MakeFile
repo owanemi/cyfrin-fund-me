@@ -1,0 +1,4 @@
+-include .env
+
+deploy-sepolia:;forge script script/DeployFundMe.s.sol:WithdrawFundMe --rpc-url $(SEPOLIA_URL) --private-key $(PK) --broadcast --verify --etherscan-api-key $(ETHERSCAN_API_KEY) -vvvv
+
