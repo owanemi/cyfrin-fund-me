@@ -1,6 +1,6 @@
-## Foundry Fund Raiser
+## FOUNDRY FUND RAISER
 
-**Crowfunding smart contract**
+**Crowfunding Smart Contract**
 
 Foundry Fund Raiser allows:
 
@@ -8,9 +8,14 @@ Foundry Fund Raiser allows:
 -   only one user to withdraw funds from our contract
 
 
-## Documentation
+## Table of Contents
 
-https://book.getfoundry.sh/
+- Installation
+- Usage
+- Testing
+- Deployment
+- Contributing
+- License
 
 ## Usage
 
